@@ -1,6 +1,11 @@
+/* Importaciones propias */
+const Markers = require('./markersList');
+
 class Sockets {
     constructor(io) {
         this.io = io;
+
+        this.markers = new Markers();
 
         this.socketEvents();
     }
