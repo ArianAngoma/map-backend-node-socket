@@ -25,6 +25,13 @@ class Sockets {
 
                 socket.broadcast.emit('new-marker', marker);
             });
+
+            /* Escuchar evento de actualizar marcador */
+            socket.on('marker-updated', (marker) => {
+                this.markers.updateMarker(marker);
+
+                socket.broadcast.emit('marker-updated', marker);
+            });
         });
     }
 }
